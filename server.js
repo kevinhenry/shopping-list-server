@@ -1,10 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 // actually use the .env file I created
 require('dotenv').config();
 // import the json file
 const shoppingListData = require('./shoppinglist.json');
 
 const app = express();
+
+// makes sure our data is accessible from the React frontend
+app.use(cors());
 
 const PORT = process.env.PORT || 3001;
 
